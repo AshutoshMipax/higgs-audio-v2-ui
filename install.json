@@ -11,6 +11,15 @@
     {
       "method": "script.start",
       "params": {
+        "uri": "setup_python_env.js",
+        "params": {
+          "path": "app"
+        }
+      }
+    },
+    {
+      "method": "script.start",
+      "params": {
         "uri": "torch.js",
         "params": {
           "path": "app",
@@ -30,6 +39,46 @@
         "input": "true",
         "message": [
           "uv pip install -r requirements.txt"
+        ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "message": [
+          "python -c \"import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB') if torch.cuda.is_available() else print('No CUDA')\""
+        ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "message": [
+          "python test_memory_optimization.py"
+        ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "message": [
+          "python validate_quantization.py"
+        ]
+      }
+    },
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "venv",
+        "path": "app",
+        "message": [
+          "python test_app_startup.py"
         ]
       }
     }

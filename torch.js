@@ -1,5 +1,14 @@
 module.exports = {
   run: [
+    // Check Python version first
+    {
+      "method": "shell.run",
+      "params": {
+        "venv": "{{args && args.venv ? args.venv : null}}",
+        "path": "{{args && args.path ? args.path : '.'}}",
+        "message": "python -c \"import sys; print(f'Python {sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}'); assert sys.version_info >= (3, 10), f'Python 3.10+ required, got {sys.version_info.major}.{sys.version_info.minor}'\""
+      }
+    },
     // windows nvidia
     {
       "when": "{{platform === 'win32' && gpu === 'nvidia'}}",

@@ -1,0 +1,96 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Models and cache (these are downloaded by Pinokio)
+models/
+cache/
+.cache/
+huggingface_cache/
+transformers_cache/
+
+# Temporary files
+temp_chunks/
+*.tmp
+*.temp
+*.log
+
+# Test files (exclude all test files)
+test_*.py
+*_test.py
+app/test_*.py
+app/*_test.py
+
+# Documentation files created during development (keep only essential ones)
+app/CHUNKING_FIX_SUMMARY.md
+app/CRYSTAL_CLEAR_AUDIO_SYSTEM.md
+app/AUDIO_QUALITY_TROUBLESHOOTING.md
+app/TRUE_SEQUENTIAL_SYSTEM.md
+app/FINAL_FIX_SUMMARY.md
+app/WORKING_BATCH_PROCESSING_FINAL.md
+app/SIMPLE_BATCH_PROCESSING.md
+app/8BIT_QUANTIZATION_FIX.md
+app/BATCH_PROCESSING_APPROACH.md
+app/SIMPLE_RELIABLE_APPROACH.md
+app/MEMORY_OPTIMIZATION.md
+app/QUANTIZATION_UI_GUIDE.md
+
+# Duplicate/old processors (keep only the working ones)
+app/true_sequential_processor.py
+app/sequential_chunk_processor.py
+app/complete_batch_processing.py
+app/working_batch_processing.py
+app/simple_batch_processing.py
+app/batch_voice_cloning.py
+app/simple_reliable_voice_cloning.py
+app/crystal_clear_voice_cloning.py
+app/higgs_voice_cloning.py
+app/simple_voice_cloning.py
+app/advanced_generation_engine.py
+app/advanced_text_processor.py
+app/performance_optimizer.py
+app/audio_quality_validator.py
+
+# Keep only essential files for the working system

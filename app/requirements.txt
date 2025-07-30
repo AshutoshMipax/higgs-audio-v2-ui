@@ -1,0 +1,22 @@
+# Python 3.10+ required
+descript-audio-codec
+transformers>=4.45.1,<4.47.0
+librosa
+dacite
+boto3==1.35.36
+s3fs
+json_repair
+pandas
+pydantic
+vector_quantize_pytorch
+loguru
+pydub
+ruff==0.12.2
+omegaconf
+click
+gradio
+# Memory optimization and quantization
+bitsandbytes>=0.41.0
+accelerate>=0.20.0
+optimum>=1.12.0
+soundfile>=0.12.1

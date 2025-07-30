@@ -1,8 +1,11 @@
 module.exports = {
   version: "3.7",
   title: "Higgs Audio TTS",
-  description: "Higgs Audio Text-to-Speech Playground",
+  description: "Higgs Audio Text-to-Speech Playground (Requires Python 3.10+)",
   icon: "icon.png",
+  requirements: {
+    python: ">=3.10"
+  },
   menu: async (kernel, info) => {
     let installed = info.exists("app/venv")
     let running = {

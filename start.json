@@ -9,7 +9,13 @@
         "chain": true,
         "env": {},
         "input": "true",
+        "env": {
+          "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+          "CUDA_LAUNCH_BLOCKING": "0"
+        },
         "message": [
+          "python validate_python.py",
+          "python memory_config.py",
           "python app.py"
         ],
         "on": [

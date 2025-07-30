@@ -4,17 +4,8 @@
       "method": "shell.run",
       "params": {
         "message": [
-          "git clone https://github.com/SUP3RMASS1VE/Higgs-Audio-Text-to-Speech app"
+          "git clone https://github.com/AshutoshMipax/higgs-audio-v2-ui.git app"
         ]
-      }
-    },
-    {
-      "method": "script.start",
-      "params": {
-        "uri": "setup_python_env.js",
-        "params": {
-          "path": "app"
-        }
       }
     },
     {
@@ -47,8 +38,19 @@
       "params": {
         "venv": "venv",
         "path": "app",
+        "chain": true,
         "message": [
-          "python -c \"import torch; print(f'CUDA available: {torch.cuda.is_available()}'); print(f'GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB') if torch.cuda.is_available() else print('No CUDA')\""
+          "uv pip install vector-quantize-pytorch",
+          "uv pip install dacite dataclasses-json pydantic omegaconf",
+          "uv pip install einops rotary-embedding-torch",
+          "uv pip install audiotools",
+          "uv pip install scipy scikit-learn matplotlib seaborn",
+          "uv pip install ffmpeg-python pydub resampy webrtcvad",
+          "uv pip install noisereduce pyworld praat-parselmouth",
+          "uv pip install sentencepiece protobuf safetensors huggingface-hub",
+          "uv pip install openai-whisper whisper",
+          "uv pip install julius encodec",
+          "uv pip install psutil packaging typing-extensions filelock regex click"
         ]
       }
     },
@@ -58,7 +60,7 @@
         "venv": "venv",
         "path": "app",
         "message": [
-          "python test_memory_optimization.py"
+          "uv pip install git+https://github.com/descriptinc/descript-audio-codec.git"
         ]
       }
     },
@@ -68,17 +70,7 @@
         "venv": "venv",
         "path": "app",
         "message": [
-          "python validate_quantization.py"
-        ]
-      }
-    },
-    {
-      "method": "shell.run",
-      "params": {
-        "venv": "venv",
-        "path": "app",
-        "message": [
-          "python test_app_startup.py"
+          "python -c \"import torch; print(f'✅ CUDA available: {torch.cuda.is_available()}'); print(f'✅ GPU memory: {torch.cuda.get_device_properties(0).total_memory / 1024**3:.1f} GB') if torch.cuda.is_available() else print('✅ CPU mode')\""
         ]
       }
     }
